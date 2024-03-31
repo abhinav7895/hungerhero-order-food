@@ -59,7 +59,7 @@ const Navbar = () => {
           className={`flex-center transition-opacity duration-300 text-2xl sm:text-3xl`}
           onClick={handleMobileNavbar}
         >
-          {isNavMenuOpen ? <RxCross1 /> : <RxHamburgerMenu />}
+          {isNavMenuOpen ? <RxCross1 className="text-white" /> : <RxHamburgerMenu className="text-white" />}
         </button>
         {isNavMenuOpen && <MobileNavLink pathname={pathname} onClose={() => { setIsNavMenuOpen(false) }} />}
       </div>

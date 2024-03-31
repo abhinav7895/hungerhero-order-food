@@ -4,7 +4,7 @@ import Navlink from './Navlink';
 import { RxCross1 } from 'react-icons/rx';
 
 
-const MobileNavLink = (pathname, onClose) => {
+const MobileNavLink = ({pathname, onClose}) => {
   const menuRef = useRef(null);
   const handleShowMenu = (e) => {
     if (e.target === menuRef.current) {
