@@ -18,16 +18,16 @@ const cartSlice = createSlice({
         state.items.push([action.payload.item, 1]);
       } else if (state.restaurant.id !== action.payload.resCart.id) {
         state.restaurant = action.payload.resCart;
-        state.items = [[action.payload.item, 1]];
+        state.items = [action.payload.item, 1];
       } else {
         state.items.push([action.payload.item, 1]);
       }
     },
     increaseCount: (state, action) => {
       console.log(action.payload);
-
       state.items.forEach((item) => {
-        if (item[0].id === action.payload) {
+        console.log(item);
+        if (item[0]?.id === action.payload) {
           item[1]++;
         }
       });

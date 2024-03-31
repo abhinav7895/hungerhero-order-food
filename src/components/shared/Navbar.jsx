@@ -16,10 +16,6 @@ const Navbar = () => {
   const [openLocationMenu, setOpenLocationMenu] = useState(false);
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
   const userLocation = useSelector((store) => store.userLocation);
-  navLinks.map((link) => {
-    console.log(link);
-  })
-
 
   const showSetLocationMenu = () => {
     setOpenLocationMenu(!openLocationMenu);
@@ -29,12 +25,12 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="fixed  z-50 left-0 right-0 top-0 flex-between lg:py-3 px-5 max-w-[1440px] bg-white shadow-md mx-auto">
+    <nav className="fixed  z-50 left-0 right-0 top-0 flex-between lg:py-3 px-5 max-w-[1440px] bg-black border-b shadow-md mx-auto">
       {/* for logo and the location */}
       <div className="flex-center gap-3">
         <Link to={"/"} className={`w-[48px] sm:w-14`}><img src="/assets/logo.svg" alt="logo" /></Link>
-        <div className={`flex-center gap-2 border p-1 rounded-md border-gray-400 bg-blue-50 hover:bg-white delay-100 transition-all`}>
-          <div className="flex-center gap-[1px] sm:gap-[2px] text-xs  sm:text-sm "><FaLocationDot className="text-red-500 text-base" /><span className=" text-gray-600">{userLocation?.city || "Delhi"}</span></div>
+        <div className={`flex-center gap-2 border p-1 rounded-md text-white border-gray-100 bg-black hover:bg-gray-900 delay-100 transition-all`}>
+          <div className="flex-center gap-[1px] sm:gap-[2px] text-xs  sm:text-sm "><FaLocationDot className="text-red-700 text-base" /><span className=" text-white">{userLocation?.city || "Delhi"}</span></div>
           <div className="flex-center">
             <button onClick={showSetLocationMenu}>
               {openLocationMenu ? <TiArrowSortedUp /> : <TiArrowSortedDown />}

@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { addTip } from "../../lib/redux/cartSlice";
 import { v4 as uuidv4 } from "uuid";
 
-const TipPopup = (onClose) => {
+const TipPopup = ({onClose}) => {
   const [showGreet, setShowGreet] = useState(false);
   const [showLimit, setShowLimit] = useState(false);
   const tipRef = useRef(null);
@@ -58,7 +58,7 @@ const TipPopup = (onClose) => {
     <div
       onClick={closeTipMenu}
       ref={tipRef}
-      className="fixed inset-0 h-full flex-center flex-col bg-black bg-opacity-30 backdrop-blur-sm z-50"
+      className="fixed inset-0 h-full flex-center flex-col bg-black bg-opacity-60 backdrop-blur-sm z-50"
     >
       <div className="flex flex-col gap-3 max-w-[350px] w-full">
         <button
@@ -67,15 +67,15 @@ const TipPopup = (onClose) => {
         >
           <RxCross1 />
         </button>
-        <div className=" w-full flex flex-col gap-3 p-5  max-w-md bg-white rounded-xl">
+        <div className=" w-full flex flex-col gap-3 p-5  max-w-md bg-black border border-slate-500 rounded-xl">
           <div className="flex items-center gap-3">
-            <label className=" text-lg text-gray-600" htmlFor="tip">
+            <label className=" text-lg text-gray-200" htmlFor="tip">
               Tip Amount{" "}
             </label>
             <div className="flex flex-1 items-center gap-[2px]">
-              <span className="text-gray-900 text-2xl">₹</span>
+              <span className="text-gray-200 text-2xl">₹</span>
               <input
-                className="flex-1 appearance-none w-full py-1 px-2 leading-tight bg-white border text-xl border-gray-400 text-gray-900 rounded shadow focus:outline-none focus:shadow-outline"
+                className="flex-1 appearance-none w-full py-1 px-2 leading-tight border text-xl border-gray-400 text-gray-300  rounded shadow focus:outline-none focus:shadow-outline bg-slate-900"
                 ref={inputRef}
                 type="number"
                 placeholder="0"
@@ -88,7 +88,7 @@ const TipPopup = (onClose) => {
             {[10, 20, 50, 100, 500].map((amount) => (
               <button
                 key={uuidv4()}
-                className="bg-blue-400 py-1 px-2 text-white rounded-md  text-center flex justify-center hover:bg-blue-600 transition-all ease-out delay-100 border border-gray-500 shadow-md"
+                className="bg-slate-950 py-1 px-2 text-white rounded-md  text-center flex justify-center hover:bg-slate-900 transition-all ease-out delay-100 border border-gray-500 shadow-md"
                 onClick={() => handleSetTip(amount)}
               >
                 ₹{amount}

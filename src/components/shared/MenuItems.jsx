@@ -33,6 +33,7 @@ const MenuItems = (card) => {
             dispatch(addToCart({ item: item, resCart: resCart }));
             toast({
                 title: "Item added to the cart",
+                variant : "",
                 description: `${item.name}`,
                 action: <ToastAction onClick={() => { navigate("/checkout") }} altText="Cart">Cart</ToastAction>,
             })
@@ -54,8 +55,8 @@ const MenuItems = (card) => {
         <>
             <div className="mt-5">
                 <button onClick={handleShowMenu} className="flex justify-between items-center w-full">
-                    <span className="text-xl font-bold text-gray-700">{title + " "} {"(" + itemCards.length + ")"}</span>
-                    <span className="text-2xl" >
+                    <span className="text-xl font-bold text-gray-200">{title + " "} {"(" + itemCards.length + ")"}</span>
+                    <span className="text-2xl text-gray-50" >
                         {showMenu ? <GoChevronUp /> : <GoChevronDown />}
                     </span>
                 </button>
@@ -70,6 +71,7 @@ const MenuItems = (card) => {
                             const description = card?.card?.info?.description;
                             const imageID = card?.card?.info?.imageId;
                             const id = card?.card?.info?.id;
+                            console.log(id);
                             return (
                                 <div key={uuidv4()}>
                                     <div className="flex justify-between items-center border-b pb-6 border-dashed w-full">
@@ -79,33 +81,33 @@ const MenuItems = (card) => {
                                                 {isBestseller && <span className="text-[#ee9c00] flex items-center  text-sm tracking-tighter"><IoIosStar /> Bestseller</span>}
                                             </div>
                                             <p className="flex flex-col">
-                                                <span>
+                                                <span className="text-gray-200">
                                                     {name}</span>
-                                                <span className="text-sm text-gray-600">&#8377;{price}</span>
+                                                <span className="text-sm text-gray-200">&#8377;{price}</span>
                                             </p>
-                                            <p className="text-sm font-light text-gray-500 mt-3">{description}</p>
+                                            <p className="text-sm font-light text-gray-300 mt-3">{description}</p>
                                         </div>
                                         <div>
                                             <div className="relative size-20 w-[100px] rounded-lg bg-slate-800">
                                                 <img className="w-full h-full  object-cover rounded-lg border border-gray-400" src={imageID ? IMG_SMALL_URL + imageID : "/assets/image.png"} alt="" />
-                                                <div className="absolute rounded-md  w-16 h-6 bg-white border border-gray-300 bottom-[-4px] left-0 right-0 mx-auto items-center px-2 flex justify-between shadow-md">
+                                                <div className="absolute rounded-md  w-16 h-6 bg-slate-800 border border-slate-300 bottom-[-4px] left-0 right-0 mx-auto items-center px-2 flex justify-between shadow-md">
                                                     {items?.filter(
                                                         (item) =>
                                                             item[0]?.id === id
                                                     ).length == 0 ?
-                                                        <button className="w-full text-green-500 font-semibold" onClick={() => {
+                                                        <button className="w-full text-white font-semibold" onClick={() => {
                                                             addFoodItem(
                                                                 card?.card?.info
                                                             );
                                                         }}>Add</button> : (
                                                             <>
-                                                                <button onClick={() => {
+                                                                <button  className="text-gray-100 font-extrabold" onClick={() => {
                                                                     decreaseFoodItem(card?.card?.info?.id)
                                                                 }}>-</button>
                                                                 <span className="font-bold text-green-500">{
                                                                     items && items?.find((item) => item[0].id === id)[1]
                                                                 }</span>
-                                                                <button className="text-green-500 " onClick={() => {
+                                                                <button className="text-green-500 font-extrabold" onClick={() => {
                                                                     increaseFoodItem(card?.card?.info?.id)
                                                                 }}>+</button>
                                                             </>

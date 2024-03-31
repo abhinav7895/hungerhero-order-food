@@ -58,10 +58,10 @@ const Home = () => {
 
   if (!allRestaurants) {
     return (
-      <div className=" flex justify-center items-center flex-col w-full mt-[120px]">
-        <img className=" w-56 md:w-[400px]" src={"assets/data-not-found.avif"} />
-        <h3 className="text-2xl md:text-4xl font-bold  text-gray-700">Data Not Found.</h3>
-        <p className="text-lg md:text-xl text-gray-600 mt-5">Something went wrong.</p>
+      <div className=" flex justify-center items-center flex-col w-full pt-[120px]">
+        <img className=" w-56 rounded-full md:w-[400px]" src={"assets/data-not-found.avif"} />
+        <h3 className="text-2xl md:text-4xl mt-4 font-bold  text-gray-100">Data Not Found.</h3>
+        <p className="text-lg md:text-xl text-gray-200 mt-5">Something went wrong.</p>
         <a href="/" className="mt-5 relative inline-flex items-center justify-start px-5 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
           <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
             <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
@@ -74,10 +74,10 @@ const Home = () => {
   }
   if (allRestaurants[6]) {
     return (
-      <div className=" mt-[120px]  max-w-96 mx-auto ">
+      <div className=" pt-[120px]  max-w-96 mx-auto ">
         <img loading="lazy" className="w-full" src={allRestaurants[6]?.imageLink} />
-        <h3 className="text-2xl text-center fonr-bold text-gray-900">{allRestaurants[6]?.title}</h3>
-        <p className="text-center text-lg mt-2 text-gray-700">We don’t have any services here till now.</p>
+        <h3 className="text-2xl text-center fonr-bold text-gray-100">{allRestaurants[6]?.title}</h3>
+        <p className="text-center text-lg mt-2 text-gray-200">We don’t have any services here till now.</p>
       </div>
     );
   }
@@ -86,16 +86,16 @@ const Home = () => {
     <>
       {
         allRestaurants[0] &&
-        <section className="mt-[120px] border-b border-b-gray-200 container mx-auto ">
-          <div className="*:text-gray-700 flex justify-between px-2 lg:px-4 items-center">
+        <section className="pt-[120px] border-b border-b-gray-200 container mx-auto ">
+          <div className="*:text-gray-50 flex justify-between px-2 lg:px-4 items-center">
             <h2 className="text-2xl md:text-3xl  font-bold">{allRestaurants[0]?.title}</h2>
             <div className="flex gap-4 text-2xl md:text-3xl ">
-              <button onClick={() => { scrollHandler("left", carouselRef) }} className="hover:text-gray-600 hover:scale-110 duration-200 ease-in transition-all cursor-pointer disabled:text-gray-500 disabled:hover:text-gray-600"><BsFillArrowLeftCircleFill /></button>
-              <button onClick={() => { scrollHandler("right", carouselRef) }} className="hover:text-gray-700 hover:scale-110 duration-200 ease-in transition-all cursor-pointer disabled:text-gray-500 disabled:hover:text-gray-600"><BsFillArrowRightCircleFill /></button>
+              <button onClick={() => { scrollHandler("left", carouselRef) }} className="hover:text-gray-200 hover:scale-110 duration-200 ease-in transition-all cursor-pointer disabled:text-gray-500 disabled:hover:text-gray-600"><BsFillArrowLeftCircleFill /></button>
+              <button onClick={() => { scrollHandler("right", carouselRef) }} className="hover:text-gray-200 hover:scale-110 duration-200 ease-in transition-all cursor-pointer disabled:text-gray-500 disabled:hover:text-gray-600"><BsFillArrowRightCircleFill /></button>
             </div>
           </div>
           <div className="w-full  my-5">
-            <div ref={carouselRef} className="flex overflow-x-scroll scroll-smooth scrollbar-hide">
+            <div ref={carouselRef} className="flex overflow-x-scroll overflow-y-hidden scroll-smooth rounded-lg scrollbar-hide">
               {
                 allRestaurants[1].map((info) => (
                   <Link onClick={() => {handleScrollTop()}} to={"/collections/" +
@@ -115,11 +115,11 @@ const Home = () => {
       {
         allRestaurants[2] &&
         <section className="mt-10 border-b border-b-gray-200 container mx-auto">
-          <div className="*:text-gray-700 flex justify-between px-2 lg:px-4">
+          <div className="*:text-gray-50 flex justify-between px-2 lg:px-4">
             <h2 className="text-2xl md:text-3xl font-bold">{allRestaurants[2]?.title}</h2>
             <div className="flex gap-4 text-2xl md:text-3xl ">
-              <button onClick={() => { scrollHandler("left", topRestRef) }} className="hover:text-gray-700 hover:scale-110 duration-200 ease-in transition-all cursor-pointer disabled:text-gray-500 disabled:hover:text-gray-600"><BsFillArrowLeftCircleFill /></button>
-              <button onClick={() => { scrollHandler("right", topRestRef) }} className="hover:text-gray-700 hover:scale-110 duration-200 ease-in transition-all cursor-pointer disabled:text-gray-500 disabled:hover:text-gray-600"><BsFillArrowRightCircleFill /></button>
+              <button onClick={() => { scrollHandler("left", topRestRef) }} className="hover:text-gray-200 hover:scale-110 duration-200 ease-in transition-all cursor-pointer disabled:text-gray-500 disabled:hover:text-gray-600"><BsFillArrowLeftCircleFill /></button>
+              <button onClick={() => { scrollHandler("right", topRestRef) }} className="hover:text-gray-200 hover:scale-110 duration-200 ease-in transition-all cursor-pointer disabled:text-gray-500 disabled:hover:text-gray-600"><BsFillArrowRightCircleFill /></button>
             </div>
           </div>
           <div className="w-full  my-5">
@@ -135,7 +135,7 @@ const Home = () => {
       }
       <section className="my-10 container mx-auto">
         <div>
-          <h2 className="text-2xl md:text-3xl text-gray-700  font-bold">{allRestaurants[4]?.title}</h2>
+          <h2 className="text-2xl md:text-3xl text-gray-50  font-bold">{allRestaurants[4]?.title}</h2>
         </div>
         <div className="w-full my-3 lg:my-5 flex flex-wrap gap-1 lg:gap-2">
           <Filters Restaurant={allRestaurants[5]}

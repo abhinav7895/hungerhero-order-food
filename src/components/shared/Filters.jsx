@@ -6,7 +6,7 @@ const Filter = (Restaurant, setRestaurant, setShowExtraData) => {
     const [filter, setFilter] = useState("jack");
     return (
         <>
-            <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "Fast" && "bg-gray-200 hover:bg-white border-gray-900"}`}
+            <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "Fast" && "bg-gray-200 hover:bg-white border-gray-900"}`}
                 onClick={() => {
                     findRestaurantsFast(
                         Restaurant,
@@ -22,7 +22,7 @@ const Filter = (Restaurant, setRestaurant, setShowExtraData) => {
                 Fast Delivery
                 {filter == "Fast" && <RxCross2 className="border rounded-full border-gray-400" />}
             </button>
-            <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "Rating" && "bg-gray-200 hover:bg-white border-gray-900"}`}
+            <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "Rating" && "bg-gray-200 hover:bg-white border-gray-900"}`}
                 onClick={() => {
                     findRestaurantsFast(
                         Restaurant,
@@ -39,7 +39,7 @@ const Filter = (Restaurant, setRestaurant, setShowExtraData) => {
                 Ratings 4.0+
                 {filter == "Rating" && <RxCross2 className="border rounded-full border-gray-400" />}
             </button>
-            <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "Offer" && "bg-gray-200 hover:bg-white border-gray-900"}`}
+            <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "Offer" && "bg-gray-200 hover:bg-white border-gray-900"}`}
                 onClick={() => {
                     findRestaurantsFast(
                         Restaurant,
@@ -56,7 +56,7 @@ const Filter = (Restaurant, setRestaurant, setShowExtraData) => {
                 Offers
                 {filter == "Offer" && <RxCross2 className="border rounded-full border-gray-400" />}
             </button>
-            <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "Veg" && "bg-gray-200 hover:bg-white border-gray-900"}`}
+            <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "Veg" && "bg-gray-200 hover:bg-white border-gray-900"}`}
                 onClick={() => {
                     findRestaurantsFast(
                         Restaurant,
@@ -73,7 +73,7 @@ const Filter = (Restaurant, setRestaurant, setShowExtraData) => {
                 Pure Veg
                 {filter == "Veg" && <RxCross2 className="border rounded-full border-gray-400" />}
             </button>
-            <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "less300" && "bg-gray-200 hover:bg-white border-gray-900"}`}
+            <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "less300" && "bg-gray-200 hover:bg-white border-gray-900"}`}
                 onClick={() => {
                     findRestaurantsLess300(
                         Restaurant,
@@ -90,7 +90,7 @@ const Filter = (Restaurant, setRestaurant, setShowExtraData) => {
                 Less then Rs.300
                 {filter == "less300" && <RxCross2 className="border rounded-full border-gray-400" />}
             </button>
-            <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "300to600" && "bg-gray-200 hover:bg-white border-gray-900"}`}
+            <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "300to600" && "bg-gray-200 hover:bg-white border-gray-900"}`}
                 onClick={() => {
                     findRestaurantsLess300(
                         Restaurant,

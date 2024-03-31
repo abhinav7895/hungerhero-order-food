@@ -71,7 +71,7 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <main>
+    <main className="bg-black">
       <ReduxProvider store={store} >
         <RouterProvider router={router}>
         </RouterProvider>
