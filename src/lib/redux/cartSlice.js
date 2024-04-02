@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const cartSlice = createSlice({
   name: "cart",
   initialState : {
@@ -15,18 +14,16 @@ const cartSlice = createSlice({
     ) => {
       if (state.restaurant === null) {
         state.restaurant = action.payload.resCart;
-        state.items.push([action.payload.item, 1]);
+        state.items.push(action.payload.item);
       } else if (state.restaurant.id !== action.payload.resCart.id) {
         state.restaurant = action.payload.resCart;
-        state.items = [action.payload.item, 1];
+        state.items = [action.payload.item];
       } else {
-        state.items.push([action.payload.item, 1]);
+        state.items.push(action.payload.item);
       }
     },
     increaseCount: (state, action) => {
-      console.log(action.payload);
       state.items.forEach((item) => {
-        console.log(item);
         if (item[0]?.id === action.payload) {
           item[1]++;
         }

@@ -12,9 +12,6 @@ const RestaurantProfileOffer = ({offers, info}) => {
         costForTwoMessage,
     } = info;
 
-    offers.map(({info}) => {
-        console.log(info);
-    })
     return (
         <>
             {/* Restaurant Info */}

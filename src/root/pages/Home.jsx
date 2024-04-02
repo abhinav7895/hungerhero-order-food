@@ -133,7 +133,7 @@ const Home = () => {
           </div>
         </section>
       }
-      <section className="my-10 container mx-auto">
+      <section className="my-10 container mx-auto pt-[80px] sm:pt-0">
         <div>
           <h2 className="text-2xl md:text-3xl text-gray-50  font-bold">{allRestaurants[4]?.title}</h2>
         </div>
@@ -143,7 +143,7 @@ const Home = () => {
             setShowExtraData={setShowExtraData} />
         </div>
         {filteredRestaurants?.length !== 0 ? (
-          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-2">
+          <div className=" flex flex-wrap sm:grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-2">
             {filteredRestaurants.map((restaurant) => (
               <RestaurantCard info={restaurant.info} key={uuidv4()} />
             ))}

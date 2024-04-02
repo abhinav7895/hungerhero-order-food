@@ -24,13 +24,12 @@ const MenuItems = (card) => {
         setShowPopUp(false);
     }
 
-
     const addFoodItem = (item) => {
         if (
             restaurant?.id == undefined ||
             restaurant?.id == resCart?.id
         ) {
-            dispatch(addToCart({ item: item, resCart: resCart }));
+            dispatch(addToCart({ item : [item, 1], resCart }));
             toast({
                 title: "Item added to the cart",
                 variant : "",
@@ -71,7 +70,6 @@ const MenuItems = (card) => {
                             const description = card?.card?.info?.description;
                             const imageID = card?.card?.info?.imageId;
                             const id = card?.card?.info?.id;
-                            console.log(id);
                             return (
                                 <div key={uuidv4()}>
                                     <div className="flex justify-between items-center border-b pb-6 border-dashed w-full">

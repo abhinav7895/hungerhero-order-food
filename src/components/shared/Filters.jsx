@@ -2,7 +2,7 @@ import { useState } from "react";
 import { findRestaurantsFast, findRestaurantsLess300 } from "../../utils/helper";
 import { RxCross2 } from "react-icons/rx";
 
-const Filter = (Restaurant, setRestaurant, setShowExtraData) => {
+const Filter = ({Restaurant, setRestaurant, setShowExtraData}) => {
     const [filter, setFilter] = useState("jack");
     return (
         <>

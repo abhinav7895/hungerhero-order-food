@@ -10,7 +10,7 @@ export const getCityName = async (
         const city = jsonData.display_name.split(",");
         return city[0];
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return "Unknown";
     }
 };

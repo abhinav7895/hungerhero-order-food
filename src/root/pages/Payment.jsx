@@ -4,7 +4,6 @@ import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 const Payment = () => {
   const { tipAmount, items, restaurant } = useSelector((store) => store.cart);
-  console.log(restaurant);
   const [totalItemPrice, setTotalItemPrice] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 

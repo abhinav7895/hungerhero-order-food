@@ -92,7 +92,7 @@ const useRestaurantsData = () => {
             );
         } catch (error) {
             setAllRestaurants(null);
-            console.log(error);
+            console.error(error);
         }
     };
     return [allRestaurants, filteredRestaurants, setFilteredRestaurants];

@@ -10,7 +10,6 @@ import { v4 as uuidv4 } from "uuid";
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const {searchData, isLoading} = useSearchOptions(searchQuery);
-  console.log(searchData);
   
   const handleSetSearchQuery = (e) => {
     const value = e.target.value;

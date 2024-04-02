@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import { increaseCount, decreaseCount } from "../../lib/redux/cartSlice";
 const CartInfo = ({item}) => {
-    console.log(item);
     const { name, itemAttribute, price, defaultPrice } = item[0];
     const count = item[1];
     const dispatch = useDispatch();

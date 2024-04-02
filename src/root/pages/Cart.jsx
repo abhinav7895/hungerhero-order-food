@@ -73,7 +73,6 @@ const Cart = () => {
         <div>
           {
             cartItems?.items?.map((item) => {
-              console.log(item);
               return <CartInfo item={item} key={uuidv4()} />
             })
           }
