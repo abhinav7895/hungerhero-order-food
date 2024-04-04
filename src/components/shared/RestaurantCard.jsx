@@ -26,7 +26,7 @@ const RestaurantCard = ({ info }) => {
           ></div>
 
           <img
-            className={`w-full rounded-xl relative ${
+            className={`w-full h-[191px] rounded-xl relative ${
               imageLoaded ? "" : "hidden"
             }`}
             src={IMG_URL + info?.cloudinaryImageId}
