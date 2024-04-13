@@ -39,7 +39,7 @@ const CartInfo = ({item}) => {
                         +
                     </button>
                 </div>
-                <p className="w-[60px] text-right text-gray-200 font-light"><span>₹{price ? (price / 100) * count : (defaultPrice / 100) * count}</span></p>
+                <p className="w-[60px] text-right text-gray-200 font-light"><span>₹{price ? Math.floor((price / 100) * count) : Math.floor((defaultPrice / 100) * count)}</span></p>
             </div>
         </div>
     );

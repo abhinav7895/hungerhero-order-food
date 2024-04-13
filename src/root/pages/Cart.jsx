@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react"
+import { lazy, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import CartInfo from "../../components/shared/CartInfo"
 import { v4 as uuidv4 } from "uuid"
 import { IoMdCart } from "react-icons/io";
-import TipPopup from "../../components/shared/TipsPopup"
 import { RxCross2 } from "react-icons/rx";
 import { deleteTip } from "../../lib/redux/cartSlice"
 import { useNavigate } from "react-router-dom"
+const TipPopup = lazy(() => import("../../components/shared/TipsPopup"));
+const CartInfo = lazy(() => import("../../components/shared/CartInfo"));
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart);
@@ -25,7 +25,6 @@ const Cart = () => {
     dispatch(deleteTip());
   }
 
-  // set the totalPrice
   useEffect(() => {
     const totalPrice = cartItems.items.reduce((totalSum, currentItem) => {
       const itemPrice = currentItem[0]?.defaultPrice ? currentItem[0]?.defaultPrice : currentItem[0]?.price;
@@ -72,7 +71,7 @@ const Cart = () => {
         </div>
         <div>
           {
-            cartItems?.items?.map((item) => {
+            cartItems.items.length > 0 && cartItems?.items?.map((item) => {
               return <CartInfo item={item} key={uuidv4()} />
             })
           }
