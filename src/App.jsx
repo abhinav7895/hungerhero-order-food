@@ -9,12 +9,12 @@ import RestaurantCardShimmer from "./components/shimmers/RestaurantCardShimmer";
 import RestaurantMenuShimmer from "./components/shimmers/RestaurantMenuShimmer";
 import Loader from "./components/shared/Loader";
 import HomeShimmer from "./components/shimmers/HomeShimmer";
+import Home from "./root/pages/Home"
 const Signin = lazy(() => import("./auth/forms/Signin"));
 const Signup = lazy(() => import("./auth/forms/Signup"));
 const Offers = lazy(() => import("./root/pages/Offers"));
 const Support = lazy(() => import("./root/pages/Support"));
 const NotFound = lazy(() => import("./root/pages/Not-Found"));
-const Home = lazy(() => import("./root/pages/Home"));
 const Cart = lazy(() => import("./root/pages/Cart"));
 const Search = lazy(() => import("./root/pages/Search"));
 const Payment = lazy(() => import("./root/pages/Payment"));
