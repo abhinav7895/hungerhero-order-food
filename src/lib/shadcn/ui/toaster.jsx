@@ -19,10 +19,10 @@ export function Toaster() {
             <div className="grid gap-1">
               {title && <ToastTitle>{title}</ToastTitle>}
               {description && (
-                <ToastDescription>{description}</ToastDescription>
+                <ToastDescription className="text-sm line-clamp-1 sm:text-base">{description}</ToastDescription>
               )}
             </div>
-            {action}
+            <button className="border px-3 py-1 rounded-md bg-slate-700">{action}</button>
             <ToastClose />
           </Toast>)
         );

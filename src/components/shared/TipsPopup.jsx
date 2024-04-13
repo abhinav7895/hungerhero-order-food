@@ -63,7 +63,7 @@ const TipPopup = ({onClose}) => {
       <div className="flex flex-col gap-3 max-w-[350px] w-full">
         <button
           onClick={onClose}
-          className="self-end text-2xl bg-gray-600 hover:bg-gray-700 p-1 text-white border-2 border-white rounded-full transition-all duration-300 hover:scale-90 focus:scale-75"
+          className="self-end text-base md:text-2xl bg-gray-600 hover:bg-gray-700 p-1 text-white border-2 border-gray-400 rounded-full transition-all duration-300 hover:scale-90 focus:scale-75"
         >
           <RxCross1 />
         </button>

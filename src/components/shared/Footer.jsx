@@ -1,73 +1,73 @@
 const Footer = () => {
     return (
-        <footer className="bg-slate-900 text-white py-[60px] mt-10 ">
+        <footer className="bg-slate-900 text-white py-[100px] sm:py-[150px] mt-10 *:select-none">
             <div className="container mx-auto flex flex-wrap px-4 justify-between">
                 <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-6 sm:mb-0">
-                    <img src={"./public/assets/logo.svg"} alt="logo" className="w-14" />
-                    <h4 className="text-2xl font-bold mb-4 mt-2 font-berkshire text-white select-none ">
+                    <img src={"./public/assets/logo.svg"} alt="logo" className="w-12 sm:w-14 md:w-20" />
+                    <h4 className="font-berkshire text-lg sm:text-2xl xl:text-3xl font-bold mb-4 mt-2 text-white select-none ">
                         Hunger Hero
                     </h4>
                 </div>
 
                 <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-6 sm:mb-0">
-                    <h4 className="text-xl font-bold mb-4">Company</h4>
-                    <ul className="text-gray-400">
-                        <li>
+                    <h4 className="text-base sm:text-xl font-bold mb-4">Company</h4>
+                    <ul className="text-gray-400 *:text-sm sm:text-base">
+                        <li className="hover:opacity-80">
                             <a href="#">About</a>
                         </li>
-                        <li>
+                        <li className="hover:opacity-80">
                             <a href="#">Careers</a>
                         </li>
-                        <li>
+                        <li className="hover:opacity-80">
                             <a href="#">Team</a>
                         </li>
-                        <li>
+                        <li className="hover:opacity-80">
                             <a href="#">Hunger Hero One</a>
                         </li>
-                        <li>
+                        <li className="hover:opacity-80">
                             <a href="#">Hunger Hero Instamart</a>
                         </li>
-                        <li>
+                        <li className="hover:opacity-80">
                             <a href="#">Hunger Hero Genie</a>
                         </li>
                     </ul>
                 </div>
 
                 <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-6 sm:mb-0">
-                    <h4 className="text-xl font-bold mb-4">Contact us</h4>
-                    <ul className="text-gray-400">
-                        <li>
+                    <h4 className="text-base sm:text-xl font-bold mb-4">Contact us</h4>
+                    <ul className="text-gray-400 *:text-sm sm:text-base">
+                        <li className="hover:opacity-80">
                             <a href="#">Help & Support</a>
                         </li>
-                        <li>
+                        <li className="hover:opacity-80">
                             <a href="#">Partner with us</a>
                         </li>
-                        <li>
+                        <li className="hover:opacity-80">
                             <a href="#">Ride with us</a>
                         </li>
                     </ul>
                 </div>
 
                 <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-6 sm:mb-0">
-                    <h4 className="text-xl font-bold mb-4">Legal</h4>
-                    <ul className="text-gray-400">
-                        <li>
+                    <h4 className="text-base sm:text-xl font-bold mb-4">Legal</h4>
+                    <ul className="text-gray-400 *:text-sm sm:text-base">
+                        <li className="hover:opacity-80">
                             <a href="#">Terms & Conditions</a>
                         </li>
-                        <li>
+                        <li className="hover:opacity-80">
                             <a href="#">Cookie Policy</a>
                         </li>
-                        <li>
+                        <li className="hover:opacity-80">
                             <a href="#">Privacy Policy</a>
                         </li>
                     </ul>
                 </div>
 
                 <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-6 sm:mb-0">
-                    <h4 className="text-xl font-bold mb-4">We deliver to:</h4>
+                    <h4 className="text-base sm:text-xl font-bold mb-4">We deliver to:</h4>
                     <div className="relative">
-                        <select className="block w-full bg-slate-700 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 appearance-none">
-                            <option value="" disabled defaultValue={"Lucknow"}>
+                        <select className="block w-full cursor-pointer   bg-slate-700 border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 appearance-none">
+                            <option disabled defaultValue={"Lucknow"}>
                                 Select a city
                             </option>
                             <option value="Bangalore">Lucknow</option>

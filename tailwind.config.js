@@ -21,6 +21,9 @@ export const theme = {
     }
   },
   extend: {
+    fontFamily: {
+      berkshire: ['"Berkshire Swash"'], // Or any other family you prefer
+    },
     keyframes: {
       "accordion-down": {
         from: { height: "0" },
@@ -30,6 +33,7 @@ export const theme = {
         from: { height: "var(--radix-accordion-content-height)" },
         to: { height: "0" },
       },
+      
     },
     animation: {
       "accordion-down": "accordion-down 0.2s ease-out",

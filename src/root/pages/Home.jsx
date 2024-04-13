@@ -88,7 +88,7 @@ const Home = () => {
         allRestaurants[0] &&
         <section className="pt-[120px] border-b border-b-gray-200 container mx-auto ">
           <div className="*:text-gray-50 flex justify-between px-2 lg:px-4 items-center">
-            <h2 className="text-2xl md:text-3xl  font-bold">{allRestaurants[0]?.title}</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl  font-bold">{allRestaurants[0]?.title}</h2>
             <div className="flex gap-4 text-2xl md:text-3xl ">
               <button onClick={() => { scrollHandler("left", carouselRef) }} className="hover:text-gray-200 hover:scale-110 duration-200 ease-in transition-all cursor-pointer disabled:text-gray-500 disabled:hover:text-gray-600"><BsFillArrowLeftCircleFill /></button>
               <button onClick={() => { scrollHandler("right", carouselRef) }} className="hover:text-gray-200 hover:scale-110 duration-200 ease-in transition-all cursor-pointer disabled:text-gray-500 disabled:hover:text-gray-600"><BsFillArrowRightCircleFill /></button>
@@ -135,7 +135,7 @@ const Home = () => {
       }
       <section className="my-10 container mx-auto pt-[80px] sm:pt-0">
         <div>
-          <h2 className="text-2xl md:text-3xl text-gray-50  font-bold">{allRestaurants[4]?.title}</h2>
+          <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-50  font-bold">{allRestaurants[4]?.title}</h2>
         </div>
         <div className="w-full my-3 lg:my-5 flex flex-wrap gap-1 lg:gap-2">
           <Filters Restaurant={allRestaurants[5]}
@@ -143,7 +143,7 @@ const Home = () => {
             setShowExtraData={setShowExtraData} />
         </div>
         {filteredRestaurants?.length !== 0 ? (
-          <div className=" flex flex-wrap sm:grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-2">
+          <div className=" flex flex-wrap sm:grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-6">
             {filteredRestaurants.map((restaurant) => (
               <RestaurantCard info={restaurant.info} key={uuidv4()} />
             ))}

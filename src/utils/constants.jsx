@@ -54,3 +54,38 @@ export const IMG_OFFLINE_URL =
 	"https://img.freepik.com/free-vector/tiny-people-examining-operating-system-error-warning-web-page-isolated-flat-illustration_74855-11104.jpg?w=996&t=st=1708003009~exp=1708003609~hmac=8b4e90b44aefae9daad9978641551edb0d718cd9c5fc67de77f6874a37907a80";
 export const IMG_RESTAURANT_NOT_URL =
 	"https://img.freepik.com/free-vector/yes-no-concept-illustration_114360-7714.jpg?w=740&t=st=1707999100~exp=1707999700~hmac=4b3929e1b820dd1850b67521bfc4b4816ca39823bf64e02e042a68d665b12749";
+
+
+	export const swiggyFaqs = [
+		{
+		  question: "How do I place an order on Hunger Hero ?",
+		  answer: (
+			<>
+			  1. Go to the Hunger Hero website.
+			  <br />
+			  2. Browse restaurants and choose your desired items.
+			  <br />
+			  3. Add them to your cart and proceed to checkout.
+			  <br />
+			  4. Enter your delivery address and choose a payment method.
+			  <br />
+			  5. Place your order and track its progress in real-time.
+			</>
+		  ),
+		},
+		{
+		  question: "What are the delivery charges on Hunger Hero ?",
+		  answer:
+			"Delivery charges on Hunger Hero  vary depending on the restaurant, distance, and order value. You can see the estimated delivery charge before placing your order.",
+		},
+		{
+		  question: "What are the payment options available on Hunger Hero ?",
+		  answer:
+			"Hunger Hero  accepts various payment methods, including cash on delivery, credit/debit cards, UPI, and online wallets.",
+		},
+		{
+		  question: "How can I track my order on Hunger Hero ?",
+		  answer:
+			"You can track your order in real-time through the Hunger Hero website. You will receive notifications about the order's progress.",
+		},
+	  ];

@@ -25,7 +25,7 @@ export const findRestaurants = (search, restaurants) => {
 export const findRestaurantsFast = (res, setRes, fil, filter, setFilter) => {
     if (fil == filter) {
         setRes(res);
-        setFilter("jack");
+        setFilter("filter");
     } else {
         setFilter(fil);
         const data = res?.filter(
@@ -37,7 +37,7 @@ export const findRestaurantsFast = (res, setRes, fil, filter, setFilter) => {
 export const findRestaurantsRating = (res, setRes, fil, filter, setFilter) => {
     if (fil == filter) {
         setRes(res);
-        setFilter("jack");
+        setFilter("filter");
     } else {
         setFilter(fil);
         const data = res?.filter((restItem) => restItem?.info?.avgRating >= 4);
@@ -47,7 +47,7 @@ export const findRestaurantsRating = (res, setRes, fil, filter, setFilter) => {
 export const findRestaurantsOffer = (res, setRes, fil, filter, setFilter) => {
     if (fil == filter) {
         setRes(res);
-        setFilter("jack");
+        setFilter("filter");
     } else {
         setFilter(fil);
         const data = res?.filter((restItem) =>
@@ -60,7 +60,7 @@ export const findRestaurantsOffer = (res, setRes, fil, filter, setFilter) => {
 export const findRestaurantsVeg = (res, setRes, fil, filter, setFilter) => {
     if (fil == filter) {
         setRes(res);
-        setFilter("jack");
+        setFilter("filter");
     } else {
         setFilter(fil);
         const data = res?.filter((restItem) => restItem?.info?.veg == true);
@@ -70,7 +70,7 @@ export const findRestaurantsVeg = (res, setRes, fil, filter, setFilter) => {
 export const findRestaurantsLess300 = (res, setRes, fil, filter, setFilter) => {
     if (fil == filter) {
         setRes(res);
-        setFilter("jack");
+        setFilter("filter");
     } else {
         setFilter(fil);
         const data = res?.filter(
@@ -90,7 +90,7 @@ export const findRestaurants300to600 = (
 ) => {
     if (fil == filter) {
         setRes(res);
-        setFilter("jack");
+        setFilter("filter");
     } else {
         setFilter(fil);
         const data = res?.filter(

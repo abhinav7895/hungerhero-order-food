@@ -11,6 +11,7 @@ const Signin = lazy(() => import("./auth/forms/Signin"));
 const Signup = lazy(() => import("./auth/forms/Signup"));
 const Offers = lazy(() => import("./root/pages/Offers"));
 const Support = lazy(() => import("./root/pages/Support"));
+const NotFound = lazy(() => import("./root/pages/Not-Found"));
 const Cart = lazy(() => import("./root/pages/Cart"));
 const Search = lazy(() => import("./root/pages/Search"));
 const RestaurantCollections = lazy(() => import("./root/pages/RestaurantCollections"));
@@ -66,6 +67,11 @@ const router = createBrowserRouter([
   {
     element: <Payment />,
     path: "/payments"
+  }, 
+
+  {
+    path : "*",
+    element : <NotFound />
   }
 ])
 

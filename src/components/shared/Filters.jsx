@@ -3,7 +3,7 @@ import { findRestaurantsFast, findRestaurantsLess300 } from "../../utils/helper"
 import { RxCross2 } from "react-icons/rx";
 
 const Filter = ({Restaurant, setRestaurant, setShowExtraData}) => {
-    const [filter, setFilter] = useState("jack");
+    const [filter, setFilter] = useState("filter");
     return (
         <>
             <button className={`flex gap-1 lg:gap-2 items-center border px-2 lg:px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 hover:scale-105 transition-all delay-200 text-sm lg:text-base ${filter == "Fast" && "bg-gray-200 hover:bg-white border-gray-900"}`}

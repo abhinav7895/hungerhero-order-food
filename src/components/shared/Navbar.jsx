@@ -25,10 +25,11 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="fixed  z-50 left-0 right-0 top-0 flex-between lg:py-3 px-5 max-w-[1440px] bg-black border-b shadow-md mx-auto">
-      {/* for logo and the location */}
+    <nav className="fixed  z-50 left-0 right-0 top-0   bg-black border-b shadow-md ">
+      <div className="max-w-[1440px] flex-between lg:py-3 px-5 mx-auto">
+        {/* for logo and the location */}
       <div className="flex-center gap-3">
-        <Link to={"/"} className={`w-[48px] sm:w-14`}><img src="/assets/logo.svg" alt="logo" /></Link>
+        <Link to={"/"} className={`w-[48px] sm:w-14 `}><img src="/assets/logo.svg" alt="logo" /></Link>
         <div className={`flex-center gap-2 border p-1 rounded-md text-white border-gray-100 bg-black hover:bg-gray-900 delay-100 transition-all`}>
           <div className="flex-center gap-[1px] sm:gap-[2px] text-xs  sm:text-sm "><FaLocationDot className="text-red-700 text-base" /><span className=" text-white">{userLocation?.city || "Delhi"}</span></div>
           <div className="flex-center">
@@ -62,6 +63,7 @@ const Navbar = () => {
           {isNavMenuOpen ? <RxCross1 className="text-white" /> : <RxHamburgerMenu className="text-white" />}
         </button>
         {isNavMenuOpen && <MobileNavLink pathname={pathname} onClose={() => { setIsNavMenuOpen(false) }} />}
+      </div>
       </div>
     </nav>
   )
