@@ -3,7 +3,7 @@ const Footer = () => {
         <footer className="bg-slate-900 text-white py-[100px] sm:py-[150px] mt-10 *:select-none">
             <div className="container mx-auto flex flex-wrap px-4 justify-between">
                 <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 mb-6 sm:mb-0">
-                    <img src={"./public/assets/logo.svg"} alt="logo" className="w-12 sm:w-14 md:w-20" />
+                    <img src={"/assets/logo.svg"} alt="logo" className="w-12 sm:w-14 md:w-20" />
                     <h4 className="font-berkshire text-lg sm:text-2xl xl:text-3xl font-bold mb-4 mt-2 text-white select-none ">
                         Hunger Hero
                     </h4>
