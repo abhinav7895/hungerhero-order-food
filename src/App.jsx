@@ -27,11 +27,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/sign-in",
-        element: <Suspense><Signin /></Suspense>
+        element: <Suspense fallback={<Loader/>}><Signin /></Suspense>
       },
       {
         path: "/sign-up",
-        element: <Suspense ><Signup /></Suspense>
+        element: <Suspense fallback={<Loader/>}><Signup /></Suspense>
       }
     ]
   },
