@@ -28,7 +28,7 @@ const FAQItem = ({ index, question, answer, activeIndex, handleClick }) => {
         </span>
       </button>
       {activeIndex === index && (
-        <div className="p-4 text-gray-300 text-sm sm:text-base font-extralight bg-slate-900 border-t border-gray-500 ">
+        <div className="p-4 text-gray-300 text-sm sm:text-base font-light bg-slate-900 border-t border-gray-500 ">
           {answer}
         </div>
       )}

@@ -69,7 +69,7 @@ const router = createBrowserRouter([
     ]
   },
   {
-    element: <Payment fallback={<Loader/>} />,
+    element: <Payment />,
     path: "/payments"
   }, 
 
