@@ -1,11 +1,23 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 const Payment = () => {
   const { tipAmount, items, restaurant } = useSelector((store) => store.cart);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [totalItemPrice, setTotalItemPrice] = useState(0);
+  const [isPaymentDone, setIsPaymentDone] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  const navigate = useNavigate()
+
+  const handlePaymentDone = () => {
+    setIsPaymentDone(true);
+    let timer = setTimeout(() => {
+      setIsPaymentDone(false);
+      navigate("/");
+      clearTimeout(timer);
+    }, 3000);
+  }
 
   useEffect(() => {
     setTotalItemPrice(
@@ -30,7 +42,7 @@ const Payment = () => {
 
   return (
     <>
-      <header className="bg-red-400 ">
+      <header className={`bg-red-400 ${isPaymentDone && "hidden"}`}>
         <nav className="fixed top-0 w-full flex items-center py-2 pointer-events-none bg-black border-b border-gray-700 z-50 justify-center">
           <Link to={"/"}>
             <img
@@ -42,7 +54,7 @@ const Payment = () => {
         </nav>
       </header>
 
-      <div className="flex-1 mt-16 md:flex-initial w-full lg:w-[920px] py-8 px-4 md:p-8 gap-8 md:rounded-2xl grid grid-cols-1 md:grid-cols-2 overflow-hidden mx-auto h-screen my-auto">
+      <div className={`flex-1 mt-16 md:flex-initial w-full lg:w-[920px] py-8 px-4 md:p-8 gap-8 md:rounded-2xl grid grid-cols-1 md:grid-cols-2 overflow-hidden mx-auto h-screen my-auto ${isPaymentDone && "hidden"} `}>
         <div className="flex flex-col">
           <div className="flex md:hidden mb-6 items-center">
             <img
@@ -151,7 +163,7 @@ const Payment = () => {
               </button>
             </div>
             <div className="flex flex-col">
-              <button className="mt-auto w-full h-12 bg-black-600 flex justify-center items-center rounded-md  outline-none font-bold text-white bg-primary border border-gray-500 hover:bg-slate-950">
+              <button onClick={handlePaymentDone} className="mt-auto w-full h-12 bg-black-600 flex justify-center items-center rounded-md  outline-none font-bold text-white bg-primary border border-gray-500 hover:bg-slate-950">
                 Pay ₹{totalPrice}
               </button>
             </div>
@@ -206,6 +218,14 @@ const Payment = () => {
           </footer>
         </div>
       </div>
+      {
+        <div className={`w-screen h-screen flex justify-center items-center bg-black ${!isPaymentDone && "hidden"}`}>
+          <div>
+            <img src="/assets/paymentdonegif-unscreen.gif" alt="payment done gif" />
+          </div>
+          <audio autoPlay src="/assets/paymentdone-audio.mp3"></audio>
+        </div>
+      }
     </>
   );
 };

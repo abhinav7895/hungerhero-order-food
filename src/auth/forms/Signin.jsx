@@ -1,5 +1,5 @@
 import { FaArrowRightLong } from "react-icons/fa6";
-
+import { Link } from "react-router-dom";
 const Signin = () => {
   return (
     <section className="">
@@ -61,12 +61,12 @@ const Signin = () => {
               </button>
               <p className="text-sm flex items-center gap-1 font-light text-gray-500 dark:text-gray-400">
                 Did not have any account?{" "}
-                <a
-                  href="/sign-up"
+                <Link
+                  to="/sign-up"
                   className="font-medium group text-primary-600 hover:underline dark:text-primary-500 flex items-center gap-1"
                 >
                   Signup here <FaArrowRightLong className="-rotate-45 opacity-0 group-hover:opacity-100" />
-                </a>
+                </Link>
               </p>
             </form>
           </div>

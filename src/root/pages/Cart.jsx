@@ -1,11 +1,10 @@
-import { lazy, startTransition, useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { IoMdCart } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import { deleteTip } from "../../lib/redux/cartSlice";
-import { useNavigate } from "react-router-dom";
 import TipPopup from "../../components/shared/TipsPopup";
 const CartInfo = lazy(() => import("../../components/shared/CartInfo"));
 
@@ -13,7 +12,6 @@ const Cart = () => {
   const cartItems = useSelector((store) => store.cart);
   const { tipAmount } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [showTipPopup, setShowTipPopup] = useState(false);
   const [totalItemPrice, setTotalItemPrice] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
