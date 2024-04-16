@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import store from "./lib/redux/store";
 import { Provider as ReduxProvider } from "react-redux";
 import { Toaster } from "./lib/shadcn/ui/toaster";
+import Payment from "./root/pages/Payment";
 import RestaurantCardShimmer from "./components/shimmers/RestaurantCardShimmer";
 import RestaurantMenuShimmer from "./components/shimmers/RestaurantMenuShimmer";
 import Loader from "./components/shared/Loader";
@@ -17,7 +18,6 @@ const Support = lazy(() => import("./root/pages/Support"));
 const NotFound = lazy(() => import("./root/pages/Not-Found"));
 const Cart = lazy(() => import("./root/pages/Cart"));
 const Search = lazy(() => import("./root/pages/Search"));
-const Payment = lazy(() => import("./root/pages/Payment"));
 const RestaurantCollections = lazy(() => import("./root/pages/RestaurantCollections"));
 const RestaurantMenu = lazy(() => import("./root/pages/RestaurantMenu"));
 

@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { clearCart } from "../../lib/redux/cartSlice";
 const Payment = () => {
   const { tipAmount, items, restaurant } = useSelector((store) => store.cart);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [totalItemPrice, setTotalItemPrice] = useState(0);
   const [isPaymentDone, setIsPaymentDone] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handlePaymentDone = () => {
     setIsPaymentDone(true);
     let timer = setTimeout(() => {
       setIsPaymentDone(false);
+      dispatch(clearCart());
       navigate("/");
       clearTimeout(timer);
     }, 3000);
@@ -81,6 +83,7 @@ const Payment = () => {
                 placeholder="Enter Name"
                 name="name"
                 defaultValue=""
+                required
               />
             </div>
             <div className="min-h-[64px] w-full">
@@ -96,8 +99,9 @@ const Payment = () => {
                   className="px-2.5 h-10 rounded-md border border-neutral-300 focus:outline-grey-300 autofill:bg-white bg-slate-900 text-white outline-none focus:ring-blue-500 focus:border-blue-500"
                   id="phone"
                   placeholder="Enter Phone"
-                  type="tel"
+                  type="number"
                   name="phone"
+                  required
                 />
               </div>
             </div>
@@ -115,6 +119,7 @@ const Payment = () => {
                   className="block p-2.5 text-sm   rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 bg-slate-900 text-white outline-none"
                   placeholder="Flat No. 302, XYZ Apartment Main Street, Ashok Nagar South Delhi District
 110021 New Delhi"
+required
                 ></textarea>
               </div>
             </div>
@@ -131,6 +136,7 @@ const Payment = () => {
                   className="px-2.5 h-10 rounded-md border border-neutral-300 focus:outline-grey-300 autofill:bg-white pr-16 bg-slate-900 text-white outline-none focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Enter Coupon Code"
                   name="couponCode"
+                  
                 />
               </div>
               <button className="absolute font-medium text-sm  z-10 right-2 top-[34px] disabled:opacity-50 transition-opacity">
@@ -150,6 +156,7 @@ const Payment = () => {
                   className="px-2.5 pl-[52px] h-10 rounded-md border border-neutral-300 focus:outline-grey-300 autofill:bg-white pr-16 bg-slate-900 text-white outline-none focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Enter the UPI ID"
                   name="upiID"
+                  required
                 />
               </div>
               <img
@@ -219,7 +226,7 @@ const Payment = () => {
         </div>
       </div>
       {
-        <div className={`w-screen h-screen flex justify-center items-center bg-black ${!isPaymentDone && "hidden"}`}>
+        isPaymentDone && <div className={`w-screen h-screen flex justify-center items-center bg-black`}>
           <div>
             <img src="/assets/paymentdonegif-unscreen.gif" alt="payment done gif" />
           </div>
