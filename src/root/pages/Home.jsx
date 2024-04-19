@@ -212,7 +212,7 @@ const Home = () => {
           </div>
         </section>
       )}
-      <section className="my-10 container mx-auto pt-[80px] sm:pt-0">
+      <section className="my-10 mt-40 container mx-auto pt-[80px] sm:pt-0">
         <div>
           <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-50  font-bold">
             {allRestaurants[4]?.title}
