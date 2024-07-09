@@ -2,6 +2,7 @@ import { OFFER_LOGO_URL } from "../../utils/constants";
 import { v4 as uuidv4 } from "uuid";
 
 const RestaurantProfileOffer = ({offers, info}) => {
+    
     const {
         name,
         cuisines,

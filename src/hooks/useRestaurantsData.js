@@ -34,6 +34,7 @@ const useRestaurantsData = () => {
                     res?.card?.card?.id?.includes("restaurant_grid_listing")
             );
 
+
             const allRestsTitle = json?.data?.cards?.find(
                 (res) =>
                     res?.card?.card?.id?.includes("popular_restaurants_title")
